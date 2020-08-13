@@ -1,5 +1,6 @@
 package com.flx.covid_19.activities
 
+import android.content.Intent
 import android.graphics.PorterDuff
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -30,7 +31,12 @@ class HomeActivity : AppCompatActivity() {
         getAllData()
 
         //View Regional Data
-        viewCountryStat.setOnClickListener {  }
+        viewCountryStat.setOnClickListener {
+            val intent = Intent (baseContext, Regional::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+        }
     }
 
     private fun getAllData() {
@@ -53,10 +59,10 @@ class HomeActivity : AppCompatActivity() {
                     recoveredCasesText.text = NumberFormat.getNumberInstance().format(currentData.recovered.toInt())
 
                     //Pass Data to Change Activity UI
-                    changeTotalCases.text = NumberFormat.getNumberInstance().format(changeData.total_cases.toInt())
-                    changeActiveCases.text = NumberFormat.getNumberInstance().format(changeData.active_cases.toInt())
-                    changeDeathCases.text = NumberFormat.getNumberInstance().format(changeData.deaths.toInt())
-                    changeRecoveredCases.text = NumberFormat.getNumberInstance().format(changeData.recovered.toInt())
+                    changeTotalCases.text = NumberFormat.getNumberInstance().format(changeData.total_cases?.toInt())
+                    changeActiveCases.text = NumberFormat.getNumberInstance().format(changeData.active_cases?.toInt())
+                    changeDeathCases.text = NumberFormat.getNumberInstance().format(changeData.deaths?.toInt())
+                    changeRecoveredCases.text = NumberFormat.getNumberInstance().format(changeData.recovered?.toInt())
 
                 }
                 else{

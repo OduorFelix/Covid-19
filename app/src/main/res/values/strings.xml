@@ -14,4 +14,6 @@
     <string name="recovered_cases">Recovered Cases</string>
     <string name="_12_345_new_recovered">12, 345 New Recovered</string>
     <string name="view_regions">View Regions</string>
+    <string name="country_name">Country Name</string>
+    <string name="recent_change">Recent Change</string>
 </resources>
