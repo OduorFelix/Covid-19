@@ -3,4 +3,15 @@
     <string name="covid_19">Covid-19</string>
     <string name="next">NEXT</string>
     <string name="GOT_IT">GOT IT</string>
+    <string name="critical_cases">Critical</string>
+    <string name="total_deaths">Deaths</string>
+    <string name="total_tested">Tested</string>
+    <string name="total_recovered">Recovered</string>
+    <string name="recent_activity">Recent Activity</string>
+    <string name="total_cases">Total Cases</string>
+    <string name="active_cases">Active Cases</string>
+    <string name="death_cases">Death Cases</string>
+    <string name="recovered_cases">Recovered Cases</string>
+    <string name="_12_345_new_recovered">12, 345 New Recovered</string>
+    <string name="view_regions">View Regions</string>
 </resources>

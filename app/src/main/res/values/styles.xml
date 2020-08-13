@@ -23,4 +23,9 @@
         <item name="mrl_rippleColor">#80000000</item>
     </style>
 
+    <style name="Toolbar.Light" parent="@style/AppTheme">
+        <item name="colorControlNormal">@color/grey_60</item>
+        <item name="android:textColorPrimary">@color/grey_60</item>
+    </style>
+
 </resources>
