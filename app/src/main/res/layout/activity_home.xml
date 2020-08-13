@@ -104,8 +104,9 @@
                                 android:id="@+id/totalCasesText"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="92,776"
-                                android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                                android:text="0"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/open_sans_semi_bold"
                                 android:textColor="@color/grey_60"
                                 android:textStyle="bold" />
 
@@ -180,8 +181,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:text="52,791"
-                                android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                                android:text="0"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/open_sans_semi_bold"
                                 android:textColor="@color/grey_60"
                                 android:textStyle="bold" />
 
@@ -265,8 +267,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:text="40,00+"
-                                android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                                android:text="0"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/open_sans_semi_bold"
                                 android:textColor="@color/grey_60"
                                 android:textStyle="bold" />
 
@@ -341,8 +344,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:text="44,29"
-                                android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                                android:text="0"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/open_sans_semi_bold"
                                 android:textColor="@color/grey_60"
                                 android:textStyle="bold" />
 
@@ -426,8 +430,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:text="40,00+"
-                                android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                                android:text="0"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/open_sans_semi_bold"
                                 android:textColor="@color/grey_60"
                                 android:textStyle="bold" />
 
@@ -502,8 +507,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:text="44,29"
-                                android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                                android:text="0"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/open_sans_semi_bold"
                                 android:textColor="@color/grey_60"
                                 android:textStyle="bold" />
 
@@ -609,9 +615,10 @@
                                 android:id="@+id/changeTotalCases"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="12, 546 New Cases"
-                                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
-                                android:textColor="@color/grey_40" />
+                                android:text="0"
+                                android:textSize="15sp"
+                                android:fontFamily="@font/open_sans_semi_bold"
+                                android:textColor="@color/colorText" />
 
                             <View
                                 android:layout_width="@dimen/spacing_large"
@@ -641,9 +648,10 @@
                                 android:id="@+id/changeActiveCases"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="12,456 Active Cases"
-                                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
-                                android:textColor="@color/grey_40" />
+                                android:text="0"
+                                android:textSize="15sp"
+                                android:fontFamily="@font/open_sans_semi_bold"
+                                android:textColor="@color/colorText" />
 
                             <View
                                 android:layout_width="@dimen/spacing_large"
@@ -673,9 +681,10 @@
                                 android:id="@+id/changeDeathCases"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="12, 345 New Deaths"
-                                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
-                                android:textColor="@color/grey_40" />
+                                android:text="0"
+                                android:textSize="15sp"
+                                android:fontFamily="@font/open_sans_semi_bold"
+                                android:textColor="@color/colorText" />
 
                             <View
                                 android:layout_width="@dimen/spacing_large"
@@ -705,9 +714,10 @@
                                 android:id="@+id/changeRecoveredCases"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/_12_345_new_recovered"
-                                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
-                                android:textColor="@color/grey_40" />
+                                android:text="0"
+                                android:textSize="15sp"
+                                android:fontFamily="@font/open_sans_semi_bold"
+                                android:textColor="@color/colorText" />
 
                             <View
                                 android:layout_width="@dimen/spacing_large"

@@ -9,13 +9,62 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import com.flx.covid_19.R
+import com.flx.covid_19.api.RetrofitClient
+import com.flx.covid_19.models.Change
+import com.flx.covid_19.models.Summary
+import com.flx.covid_19.response.CovidResponse
+import kotlinx.android.synthetic.main.activity_home.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import java.text.DecimalFormat
+import java.text.NumberFormat
+import java.util.*
 
 class HomeActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-
         initToolbar()
+        getAllData()
+
+        //View Regional Data
+        viewCountryStat.setOnClickListener {  }
+    }
+
+    private fun getAllData() {
+        val retIn = RetrofitClient.RetrofitInstance.getRetrofitInstance().create(RetrofitClient.ApiInterface::class.java)
+        retIn.fetchData().enqueue(object : Callback<CovidResponse>{
+            override fun onFailure(call: Call<CovidResponse>, t: Throwable) {
+                Toast.makeText(this@HomeActivity, "No Internet Connection, Please Try Again", Toast.LENGTH_LONG).show()
+            }
+            override fun onResponse(call: Call<CovidResponse>, response: Response<CovidResponse>) {
+                if (response.code() == 200) {
+                    val changeData = response.body()?.data?.change as Change
+                    val currentData = response.body()?.data?.summary as Summary
+
+                    //Passing Data to UI Components
+                    totalCasesText.text = NumberFormat.getNumberInstance().format(currentData.total_cases.toInt())
+                    activeCasesText.text = NumberFormat.getNumberInstance().format(currentData.active_cases.toInt())
+                    criticalCasesText.text = NumberFormat.getNumberInstance().format(currentData.critical.toInt())
+                    deathCasesText.text = NumberFormat.getNumberInstance().format(currentData.deaths.toInt())
+                    testedCasesText.text = NumberFormat.getNumberInstance().format(currentData.tested.toInt())
+                    recoveredCasesText.text = NumberFormat.getNumberInstance().format(currentData.recovered.toInt())
+
+                    //Pass Data to Change Activity UI
+                    changeTotalCases.text = NumberFormat.getNumberInstance().format(changeData.total_cases.toInt())
+                    changeActiveCases.text = NumberFormat.getNumberInstance().format(changeData.active_cases.toInt())
+                    changeDeathCases.text = NumberFormat.getNumberInstance().format(changeData.deaths.toInt())
+                    changeRecoveredCases.text = NumberFormat.getNumberInstance().format(changeData.recovered.toInt())
+
+                }
+                else{
+                    Toast.makeText(this@HomeActivity, "No Data, Please Try Again", Toast.LENGTH_LONG).show()
+                }
+            }
+        })
+
     }
 
     private fun initToolbar() {
@@ -24,13 +73,10 @@ class HomeActivity : AppCompatActivity() {
         toolbar.navigationIcon!!.setColorFilter(resources.getColor(R.color.grey_60), PorterDuff.Mode.SRC_ATOP)
         setSupportActionBar(toolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        //Tools.setSystemBarColor(this, R.color.grey_5)
-        //Tools.setSystemBarLight(this)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_search_setting, menu)
-        //Tools.changeMenuIconColor(menu, resources.getColor(R.color.grey_60))
         return true
     }
 
