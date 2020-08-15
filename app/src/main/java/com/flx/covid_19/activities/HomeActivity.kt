@@ -43,7 +43,7 @@ class HomeActivity : AppCompatActivity() {
         val retIn = RetrofitClient.RetrofitInstance.getRetrofitInstance().create(RetrofitClient.ApiInterface::class.java)
         retIn.fetchData().enqueue(object : Callback<CovidResponse>{
             override fun onFailure(call: Call<CovidResponse>, t: Throwable) {
-                Toast.makeText(this@HomeActivity, "No Internet Connection, Please Try Again", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@HomeActivity, t.message, Toast.LENGTH_LONG).show()
             }
             override fun onResponse(call: Call<CovidResponse>, response: Response<CovidResponse>) {
                 if (response.code() == 200) {
@@ -51,12 +51,12 @@ class HomeActivity : AppCompatActivity() {
                     val currentData = response.body()?.data?.summary as Summary
 
                     //Passing Data to UI Components
-                    totalCasesText.text = NumberFormat.getNumberInstance().format(currentData.total_cases.toInt())
-                    activeCasesText.text = NumberFormat.getNumberInstance().format(currentData.active_cases.toInt())
-                    criticalCasesText.text = NumberFormat.getNumberInstance().format(currentData.critical.toInt())
-                    deathCasesText.text = NumberFormat.getNumberInstance().format(currentData.deaths.toInt())
-                    testedCasesText.text = NumberFormat.getNumberInstance().format(currentData.tested.toInt())
-                    recoveredCasesText.text = NumberFormat.getNumberInstance().format(currentData.recovered.toInt())
+                    totalCasesText.text = NumberFormat.getNumberInstance().format(currentData.total_cases?.toInt())
+                    activeCasesText.text = NumberFormat.getNumberInstance().format(currentData.active_cases?.toInt())
+                    criticalCasesText.text = NumberFormat.getNumberInstance().format(currentData.critical?.toInt())
+                    deathCasesText.text = NumberFormat.getNumberInstance().format(currentData.deaths?.toInt())
+                    testedCasesText.text = NumberFormat.getNumberInstance().format(currentData.tested?.toInt())
+                    recoveredCasesText.text = NumberFormat.getNumberInstance().format(currentData.recovered?.toInt())
 
                     //Pass Data to Change Activity UI
                     changeTotalCases.text = NumberFormat.getNumberInstance().format(changeData.total_cases?.toInt())

@@ -36,8 +36,7 @@ class MainActivity : AppCompatActivity() {
         R.drawable.logo,
         R.drawable.wearing_a_mask_,
         R.drawable.washing_hands,
-        R.drawable.smiley_face
-    )
+        R.drawable.smiley_face)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

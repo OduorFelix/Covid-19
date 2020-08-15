@@ -6,5 +6,5 @@ data class Change (val total_cases: String?,
                    val recovered: String?,
                    val critical: String?,
                    val tested: String?,
-                   val death_ratio: String?,
-                   val recovery_ratio: String?)
+                   val death_ratio: Double?,
+                   val recovery_ratio: Double?)

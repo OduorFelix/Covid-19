@@ -8,11 +8,11 @@ import android.widget.TextView
 import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
 import com.flx.covid_19.R
-import com.flx.covid_19.models.Countries
+import com.flx.covid_19.models.Regions
 
-class RegionalAdapter (
+class RegionalAdapter(
     private var mContext: String,
-    private var countryData: List<Countries>,
+    private var countryData: List<Regions>,
     private var isFragment: Boolean = false, private var clickListner: OnCountryItemClickListner) : RecyclerView.Adapter<RegionalAdapter.ViewHolder>() {
 
     private lateinit var context: Context
@@ -44,7 +44,7 @@ class RegionalAdapter (
         private val currentTestedCasesText: TextView = itemView.findViewById(R.id.currentTestedCasesText)
         private val changeTestedCasesText: TextView = itemView.findViewById(R.id.changeTestedCasesText)
 
-        fun initialize(items: Countries, action: OnCountryItemClickListner){
+        fun initialize(items: Regions, action: OnCountryItemClickListner){
             countryName.text = items.name
             currentTotalCases.text = items.total_cases
             changeTotalCases.text = "+0"
@@ -68,5 +68,5 @@ class RegionalAdapter (
 }
 
 interface OnCountryItemClickListner{
-    fun onItemClick(items: Countries, position: Int)
+    fun onItemClick(items: Regions, position: Int)
 }
